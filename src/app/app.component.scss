@@ -1,0 +1,16 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: 12px;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-bottom: 12px;
+  font-size: 18px;
+}

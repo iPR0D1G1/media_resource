@@ -1,0 +1,60 @@
+.video_player_container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: grid;
+  align-items: stretch;
+  justify-content: stretch;
+  background-color: #299cd3;
+}
+
+.canvas {
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+}
+
+.counter_container {
+  color: black;
+  font-size: 32px;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: calc(50% - 50px);
+  bottom: calc(50% - 50px);
+  display: grid;
+  align-items: center;
+  clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+  justify-content: center;
+  background-color: #299dd3d5;
+//   border: 1px solid #299cd3;
+}
+
+.hidden {
+  display: none;
+}
+
+.video_player {
+  width: auto;
+  min-height: 100%;
+  height: auto;
+  min-width: 100%;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.btn_camera {
+  height: 30px;
+  position: absolute;
+  bottom: 30px;
+  width: 200px;
+  left: calc(50% - 100px);
+  background-color: #299cd3;
+  color: white;
+  border-radius: 4px;
+  text-transform: capitalize;
+  border: 1px solid #363535c2;
+}

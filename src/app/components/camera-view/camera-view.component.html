@@ -1,0 +1,15 @@
+<div class="video_player_container">
+    <button *ngIf="!this.image && !this.should_show" class="btn_camera"
+        (click)="!this.showVideoPlayer ? loadVideoPlayer() :  snapPicture()" color="primary">
+        {{!this.showVideoPlayer ? 'Open camera' : 'Take picture'}}
+    </button>
+    <button *ngIf="this.image" class="btn_camera" (click)="this.downloadImage()" color="primary"> Save</button>
+
+    <video #video_player id="player" width="100%" [controls]="false" autoplay class="video_player"></video>
+
+    <canvas #canvas class="canvas"></canvas>
+    <div class="counter_container" *ngIf="this.counter$ | async as count">
+        {{ 6 - count}}
+    </div>
+</div>
+<a #anchor class="hidden" download="myImage.jpg" href="">Download to myImage.jpg</a>
