@@ -18,6 +18,7 @@ export class CameraViewComponent implements OnInit {
   counter_max_value = 7
   image: any
   should_show = false
+  showCanvas = false
 
   takeImage() {
     //@ts-ignore
@@ -26,13 +27,12 @@ export class CameraViewComponent implements OnInit {
     const canvas = this.canvas.nativeElement
 
     const context = canvas.getContext('2d')
-    const captureButton = document.getElementById('capture')
 
     context.drawImage(player, 0, 0, canvas.width, canvas.height)
-
+    this.showCanvas=true
     //stop camera
     player.srcObject.getVideoTracks().forEach(track => track.stop())
-    const image = canvas.toDataURL("image/png")
+    const image = canvas.toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
 
     this.image = image
     this.showVideoPlayer = false
@@ -63,6 +63,7 @@ export class CameraViewComponent implements OnInit {
       .subscribe((stream) => {
         elementRef.srcObject = stream
         this.showVideoPlayer = true
+        this.showCanvas= false
       })
   }
 

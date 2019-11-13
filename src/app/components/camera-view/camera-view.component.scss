@@ -1,3 +1,15 @@
+.canvas {
+  z-index: -1;
+  position: absolute;
+  bottom: calc(50% - 500px);
+  left: calc(50% - 500px);
+  max-width: 1000px;
+  max-height: 1000px;
+  display: none;
+  height: 90%;
+  width: 90%;
+}
+
 .video_player_container {
   height: 100%;
   width: 100%;
@@ -8,13 +20,15 @@
   background-color: #299cd3;
 }
 
-.canvas {
-  z-index: -1;
+.front {
+  z-index: 200;
+  height: 90%;
   position: absolute;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-  left: 0px;
+  top: 5%;
+  width: 90%;
+  // left: 5%;
+  min-height: 200px;
+  min-width: 200px;
 }
 
 .counter_container {
@@ -30,7 +44,7 @@
   clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
   justify-content: center;
   background-color: #299dd3d5;
-//   border: 1px solid #299cd3;
+  //   border: 1px solid #299cd3;
 }
 
 .hidden {
@@ -54,6 +68,7 @@
   left: calc(50% - 100px);
   background-color: #299cd3;
   color: white;
+  z-index: 2000;
   border-radius: 4px;
   text-transform: capitalize;
   border: 1px solid #363535c2;

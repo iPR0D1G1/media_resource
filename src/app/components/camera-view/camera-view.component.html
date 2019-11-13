@@ -5,11 +5,12 @@
     </button>
     <button *ngIf="this.image" class="btn_camera" (click)="this.downloadImage()" color="primary"> Save</button>
 
-    <video #video_player id="player" width="100%" [controls]="false" autoplay class="video_player"></video>
+    <video #video_player id="player" [ngClass]="{'hidden': this.showCanvas}" width="100%" [controls]="false" autoplay
+        class="video_player"></video>
 
-    <canvas #canvas class="canvas"></canvas>
+    <canvas #canvas class="canvas" [ngClass]="{'video_player_container front': this.showCanvas}"></canvas>
     <div class="counter_container" *ngIf="this.counter$ | async as count">
         {{ 6 - count}}
     </div>
 </div>
-<a #anchor class="hidden" download="myImage.jpg" href="">Download to myImage.jpg</a>
+<a #anchor class="hidden" download="myImage.png" href="">Download to myImage.jpg</a>
